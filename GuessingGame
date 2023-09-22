@@ -1,0 +1,37 @@
+
+import java.util.Random;
+import java.util.Scanner;
+public class gamer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		guessingGame();
+	}
+	
+	public static void guessingGame () {
+		Random random = new Random ();
+		Scanner scanner = new Scanner(System.in);
+		int randomNmber = random.nextInt(100);
+		
+		for (int i = 10; i > 0; i--) {
+			
+			System.out.println("You have " + i +  " guesses to get the right answer. Have a try. (btw the number is " + randomNmber +")"); 
+			//For testing purposes, this gives the answer
+			int input = scanner.nextInt();
+			
+		if (input == randomNmber) {
+			System.out.println ("Congratulations " + input + " is correct.");
+			break;
+		} else {
+			System.out.println ("Sorry " + input + " is incorrect");
+			if (i == 1) {
+				System.out.println ("Out of guesses!");
+			}
+		}
+		}
+	}
+		
+	
+			
+		
+	}
