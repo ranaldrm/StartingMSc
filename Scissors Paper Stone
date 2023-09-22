@@ -9,44 +9,9 @@ public class gamer {
 
 	}
 	
-	public static void guessingGame () {
-		Random random = new Random ();
-		Scanner scanner = new Scanner(System.in);
-		int randomNmber = random.nextInt(100);
+
 		
-		for (int i = 10; i > 0; i--) {
-			
-			System.out.println("You have " + i +  " guesses to get the right answer. Have a try. (btw the number is " + randomNmber +")");
-			int input = scanner.nextInt();
-			
-		if (input == randomNmber) {
-			System.out.println ("Congratulations " + input + " is correct.");
-			break;
-		} else {
-			System.out.println ("Sorry " + input + " is incorrect");
-			if (i == 1) {
-				System.out.println ("Out of guesses!");
-			}
-		}
-		}
-	}
-		
-	public static void pyramid () { 
-		Scanner scanner = new Scanner (System.in);
-		System.out.println("Gimme a number. ");
-		int number = scanner.nextInt();
-		System.out.println(number);
-		for (int i = 1; i <=number; i ++) {  //Loop for moving down vertically
-			for (int k = 1; k <= number -i; k++) { //Loop for printing spaces
-				System.out.print(" "); //prints an instance of a space before the number
-			}
-			for (int j = 1; j <= i; j++) { //Loop for repeating number horizontally
-				System.out.print(i); //prints an instance of i
-				System.out.print(" "); //prints an instance of a space between numbers
-			}
-			System.out.print("\n");  // moves down after line is completed
-			}
-	}
+
 			
 		
 // 0 = scissor, 1 = paper 2 = stone
@@ -56,7 +21,11 @@ public class gamer {
 		Scanner scanner = new Scanner (System.in);
 		int userChoiceNumber;
 		String compChoiceWord;
+		int userWon = 0;
+		int compWon = 0;
 		while (true) {
+			
+			System.out.println("You have won " + userWon + " times and the computer has won " + compWon + " times.");
 			System.out.println("Choose: scissors, paper or stone? ");
 			String userChoiceWord = scanner.nextLine();
 			if (userChoiceWord.equals("scissors")) {
@@ -70,7 +39,7 @@ public class gamer {
 				continue;
 			}
 			int compChoiceNumber = random.nextInt(3) ;
-			System.out.println(compChoiceNumber);
+//			System.out.println(compChoiceNumber);
 			if (compChoiceNumber == 0) {
 				compChoiceWord = "scissors";			
 			} else if (compChoiceNumber == 1) {
@@ -83,12 +52,16 @@ public class gamer {
 				System.out.println("Draw!");
 			} else if ( userChoiceNumber == 0 && compChoiceNumber == 2) {
 				System.out.println("Computer wins!");
+				compWon ++;
 			} else if (userChoiceNumber == 2 && compChoiceNumber == 0) {
-				System.out.println("You win!");				
+				System.out.println("You win!");		
+				userWon ++;
 			} else if (userChoiceNumber < compChoiceNumber) {
 				System.out.println("You win!");
+				userWon ++;
 			} else { 
 				System.out.println("Computer wins!");
+				compWon ++;
 			}
 			
 			
