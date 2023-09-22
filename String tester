@@ -1,0 +1,25 @@
+package stringFormatEx;
+
+public class Stringer {
+
+	public static void main(String[] args) {
+
+		
+		String str = "Annabelle";
+		int in = 145;
+		double dub = 22.167;
+		
+		System.out.println(String.format("%14s", str));
+		System.out.println(String.format("%-14s", str));
+		System.out.println(String.format("%4s", str));
+		System.out.println(String.format("%6d", in));
+		System.out.println(String.format("%-6d", in));
+		System.out.println(String.format("%06d", in));
+		System.out.println(String.format("%2d", in));
+		System.out.println(String.format("%6.2f", dub));
+		System.out.println(String.format("%6.3f", dub));
+		System.out.println(String.format("%6.4f", dub));
+		System.out.println(String.format("%10.6f", dub));
+
+
+	}
